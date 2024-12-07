@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+        // Extrae el código de autorización
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        if (code) {
+            // Redirige de vuelta a la app (deep link)
+            window.location.href = `yourappscheme://callback?code=${code}`;
+        } else {
+            document.write('Error: No code provided');
+        }
+    </script>
+</body>
+</html>
